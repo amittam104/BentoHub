@@ -8,6 +8,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "./components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Inputs() {
   return (
@@ -16,7 +17,7 @@ export default function Inputs() {
         <CardHeader>
           <CardTitle>Enter your details</CardTitle>
           <CardDescription>
-            Just fill out the details below and build your grid.
+            Fill out the details below and build your grid.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -25,29 +26,39 @@ export default function Inputs() {
               <div className="col-span-5 grid w-full items-center gap-10">
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Name of your project" />
+                  <Input id="name" placeholder="Enter Your Name" />
                 </div>
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Name of your project" />
+                  <Label htmlFor="name">Role / Job</Label>
+                  <Input id="name" placeholder="What do you do?" />
                 </div>
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Name of your project" />
+                  <Label htmlFor="name">Portfolio</Label>
+                  <Input
+                    id="name"
+                    placeholder="Your portfolio site or personal site"
+                  />
                 </div>
               </div>
-              <div className="col-span-6 grid w-full items-center gap-10">
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Name of your project" />
+              <div className="col-span-6 grid w-full grid-cols-2 items-center gap-10">
+                <div className="col-span-2 flex flex-col space-y-1.5">
+                  <Label htmlFor="name">Intro</Label>
+                  <Textarea
+                    id="name"
+                    placeholder="Enter your one sentence intro"
+                  />
                 </div>
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Name of your project" />
+                  <Label htmlFor="name">Primary</Label>
+                  <Input id="name" placeholder="Fronted Development" />
                 </div>
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Name of your project" />
+                  <Label htmlFor="name">Secondary</Label>
+                  <Input id="name" placeholder="Web Design" />
+                </div>
+                <div className="flex flex-col space-y-1.5">
+                  <Label htmlFor="name">Tertiary</Label>
+                  <Input id="name" placeholder="Graphics Design" />
                 </div>
               </div>
               <Button className="self-end">Next</Button>
