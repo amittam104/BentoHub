@@ -19,7 +19,7 @@ export default function Inputs() {
             Enter your details
           </CardTitle>
           <CardDescription>
-            Fill out the details below and build your grid.
+            Fill out the details, checkout the grid below.
           </CardDescription>
         </CardHeader>
         <CardContent className="p-3 sm:p-6">

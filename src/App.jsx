@@ -2,13 +2,15 @@ import "./App.css";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Inputs from "./Inputs";
+import BentoGrid from "./BentoGrid";
 
 export default function App() {
   return (
-    <div className="font-JakartaRegular bg-[#F7FFFA]">
+    <div className="bg-[#F7FFFA] font-JakartaRegular">
       <Navbar />
       <Hero />
       <Inputs />
+      <BentoGrid />
     </div>
   );
 }
