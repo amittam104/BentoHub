@@ -129,9 +129,30 @@ function Grid() {
           ></path>
         </svg>
       </div>
-      <div className="col-span-3 row-span-6 rounded-3xl border border-slate-300 p-4"></div>
-      <div className="col-span-4 row-span-6 rounded-3xl border border-slate-300 p-4"></div>
-      <div className="col-span-5 row-span-6 rounded-3xl border border-slate-300 p-4"></div>
+      <div className="col-span-3 row-span-6 flex flex-col items-start justify-center rounded-3xl border border-slate-300 p-6 text-start">
+        <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg border-slate-200 bg-white p-2 shadow">
+          <img src="/BentoHub.svg" alt="project logo" />
+        </div>
+        <h4 className="mb-6 text-lg font-semibold">BentoHub</h4>
+        <p className="text-sm">
+          Build your own bento grid, copy the HTML or Markdown code and paste it
+          on to the top of your GitHub Profile readme.
+        </p>
+      </div>
+      <div className="col-span-4 row-span-6 flex items-center justify-center rounded-3xl border border-slate-300 p-4">
+        <img
+          className="h-60 w-auto"
+          src="/BentoHubSnap.png"
+          alt="bento hub app screenshot"
+        />
+      </div>
+      <div className="col-span-5 row-span-6 flex items-center justify-center overflow-hidden rounded-3xl border border-slate-300 p-6">
+        <img
+          className="rounded-lg border-2 border-slate-800 shadow-xl"
+          src="/portfolio.png"
+          alt="Portfolio screenshot"
+        />
+      </div>
     </div>
   );
 }
