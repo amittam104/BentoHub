@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Inputs from "./Inputs";
 import BentoGrid from "./BentoGrid";
+import CTA from "./CTA";
+import Footer from "./Footer";
 
 export default function App() {
   return (
@@ -11,6 +13,8 @@ export default function App() {
       <Hero />
       <Inputs />
       <BentoGrid />
+      <CTA />
+      <Footer />
     </div>
   );
 }

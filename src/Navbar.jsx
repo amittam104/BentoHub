@@ -12,7 +12,7 @@ export default function Navbar() {
         />
         <p className="text-lg font-black md:text-xl lg:text-2xl">BentoHub</p>
       </div>
-      <NavButtons />
+      <CTAButtons />
       <div className="lg:hidden">
         <List size={24} />
       </div>
@@ -20,7 +20,7 @@ export default function Navbar() {
   );
 }
 
-function NavButtons() {
+export function CTAButtons() {
   return (
     <div className="flex items-center gap-8">
       <Button variant={"outline"} className="hidden gap-2 lg:flex">
