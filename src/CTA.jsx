@@ -25,7 +25,7 @@ function Output() {
         </div>
       </div>
       <div className="flex w-full flex-col items-start gap-4">
-        <h5 className="text-base font-medium">Get the Markdown code</h5>
+        <h5 className="text-base font-medium">Get the HTML code</h5>
         <div className="flex w-full items-center gap-2">
           <Input />
           <Button variant="ghost">
