@@ -23,17 +23,29 @@ export default function Navbar() {
 export function CTAButtons() {
   return (
     <div className="flex items-center gap-8">
-      <Button variant={"outline"} className="hidden gap-2 lg:flex">
-        <GithubLogo size={20} />
-        GitHub Repo
-      </Button>
-      <Button
-        variant={"bentohub"}
-        className="hidden items-center gap-2 lg:flex"
+      <a
+        href="https://github.com/amittam104/BentoHub"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <HandHeart size={20} />
-        Sponsor
-      </Button>
+        <Button variant={"outline"} className="hidden gap-2 lg:flex">
+          <GithubLogo size={20} />
+          GitHub Repo
+        </Button>
+      </a>
+      <a
+        href="https://buymeacoffee.com/attam104"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          variant={"bentohub"}
+          className="hidden items-center gap-2 lg:flex"
+        >
+          <HandHeart size={20} />
+          Sponsor
+        </Button>
+      </a>
     </div>
   );
 }
