@@ -1,24 +1,23 @@
+/* eslint-disable react/prop-types */
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Globe } from "@phosphor-icons/react";
 
-export default function BentoGrid() {
+export default function BentoGrid({ name, job }) {
   return (
     <section className="mx-4 mb-8 flex w-auto flex-col items-center rounded-3xl bg-white px-6 py-8 text-center drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] md:px-12 md:py-12 lg:px-12 lg:py-12 xl:mx-auto xl:w-[75rem]">
-      <Grid />
+      <Grid name={name} job={job} />
     </section>
   );
 }
 
-function Grid() {
+function Grid({ name, job }) {
   return (
     <div className="grid max-w-[65rem] grid-cols-2 gap-4 lg:grid-cols-12 lg:grid-rows-12">
       <div className="relative col-span-2 flex max-w-full flex-col items-start rounded-3xl border border-slate-300 p-6 pt-8 text-start lg:col-span-8 lg:row-span-6">
         <div className="absolute right-4 top-4 flex items-center gap-3 rounded-md bg-green-100 px-3 py-1 text-sm">
           <img className="static h-6 w-6" src="/circle-svgrepo-com.svg" />
-          <p className="static font-medium text-green-900">
-            Frontend Developer
-          </p>
+          <p className="static font-medium text-green-900">{job}</p>
         </div>
         <div className="mt-6 pb-6 sm:mt-0">
           <Avatar>
@@ -26,7 +25,7 @@ function Grid() {
             <AvatarFallback>Avatar</AvatarFallback>
           </Avatar>
         </div>
-        <h3 className="mb-4 text-4xl font-black">Amit Tambulkar</h3>
+        <h3 className="mb-4 text-4xl font-black">{name}</h3>
         <div className="mb-8 flex flex-col gap-2 sm:flex-row">
           <Badge variant={"primarySkill"}>Web Development</Badge>
           <Badge variant={"secondarySkill"}>Web Design</Badge>

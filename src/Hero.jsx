@@ -2,6 +2,11 @@ import { Button } from "./components/ui/button";
 import { ArrowFatDown } from "@phosphor-icons/react";
 
 export default function Hero() {
+  // const ref = useRef(null);
+  // const handleClick = () => {
+  //   ref.current?.scrollIntoView({ behavior: "smooth" });
+  // };
+
   return (
     <section className="mx-4 mb-8 flex w-auto flex-col items-center rounded-3xl bg-white px-6 py-8 text-center drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] md:px-12 md:py-12 lg:px-24 lg:py-16 xl:mx-auto xl:w-[75rem]">
       <h1 className="mb-8 text-3xl font-black text-slate-900 md:text-4xl lg:text-5xl xl:w-[55rem] xl:text-6xl">
