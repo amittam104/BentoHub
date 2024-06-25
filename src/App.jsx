@@ -65,7 +65,7 @@ export default function App() {
     <div className="bg-[#F7FFFA] font-JakartaRegular">
       <Navbar />
       <Hero />
-      <Inputs secondStep={secondStep}>
+      <Inputs secondStep={secondStep} thirdStep={thirdStep}>
         {!secondStep ? (
           <Form
             name={name}
