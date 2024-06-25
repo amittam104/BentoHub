@@ -22,11 +22,15 @@ export default function App() {
   const [thirdStep, setThirdStep] = useState(false);
 
   function handleSecondStep() {
-    setSecondStep(true);
+    setSecondStep(!secondStep);
   }
 
+  // function handleBackToFirstStep() {
+  //   setSecondStep(true);
+  // }
+
   function handleThirdStep() {
-    setThirdStep(true);
+    setThirdStep(!thirdStep);
   }
 
   return (
@@ -53,9 +57,12 @@ export default function App() {
             onSecondStep={handleSecondStep}
           />
         ) : !thirdStep ? (
-          <Form2 onThirdStep={handleThirdStep} />
+          <Form2
+            onThirdStep={handleThirdStep}
+            onSecondStep={handleSecondStep}
+          />
         ) : (
-          <Form3 />
+          <Form3 onThirdStep={handleThirdStep} />
         )}
       </Inputs>
       <BentoGrid

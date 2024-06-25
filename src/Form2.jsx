@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Upload } from "@phosphor-icons/react";
 import { Textarea } from "@/components/ui/textarea";
 
-export function Form2({ onThirdStep }) {
+export function Form2({ onThirdStep, onSecondStep }) {
   return (
     <form className="flex flex-col items-start gap-8 lg:grid lg:grid-cols-12">
       <div className="flex w-full flex-col items-start gap-8 lg:col-span-5">
@@ -71,6 +71,13 @@ export function Form2({ onThirdStep }) {
           </div>
         </div>
       </div>
+      <Button
+        className="lg:col-span-1 lg:col-end-12 lg:self-end"
+        variant={"outline"}
+        onClick={onSecondStep}
+      >
+        Back
+      </Button>
       <Button
         className="lg:col-span-1 lg:col-end-13 lg:self-end"
         onClick={onThirdStep}
