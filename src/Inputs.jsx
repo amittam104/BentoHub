@@ -7,9 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Form } from "./Form";
 
-export default function Inputs({ name, onSetName, job, onSetJob }) {
+export default function Inputs({ children }) {
   return (
     <section className="mx-4 mb-8 w-auto rounded-3xl bg-white px-3 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] sm:px-8 md:p-12 lg:p-4 xl:mx-auto xl:w-[75rem]">
       <Card className="border-none shadow-none">
@@ -21,14 +20,7 @@ export default function Inputs({ name, onSetName, job, onSetJob }) {
             Fill out the details, checkout the grid below.
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-3 sm:p-6">
-          <Form
-            name={name}
-            onSetName={onSetName}
-            job={job}
-            onSetJob={onSetJob}
-          />
-        </CardContent>
+        <CardContent className="p-3 sm:p-6">{children}</CardContent>
       </Card>
     </section>
   );

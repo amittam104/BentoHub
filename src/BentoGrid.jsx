@@ -3,15 +3,39 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Globe } from "@phosphor-icons/react";
 
-export default function BentoGrid({ name, job }) {
+export default function BentoGrid({
+  name,
+  job,
+  portfolio,
+  intro,
+  primarySkill,
+  secondarySkill,
+  tertiarySkill,
+}) {
   return (
     <section className="mx-4 mb-8 flex w-auto flex-col items-center rounded-3xl bg-white px-6 py-8 text-center drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] md:px-12 md:py-12 lg:px-12 lg:py-12 xl:mx-auto xl:w-[75rem]">
-      <Grid name={name} job={job} />
+      <Grid
+        name={name}
+        job={job}
+        portfolio={portfolio}
+        intro={intro}
+        primarySkill={primarySkill}
+        secondarySkill={secondarySkill}
+        tertiarySkill={tertiarySkill}
+      />
     </section>
   );
 }
 
-function Grid({ name, job }) {
+function Grid({
+  name,
+  job,
+  portfolio,
+  intro,
+  primarySkill,
+  secondarySkill,
+  tertiarySkill,
+}) {
   return (
     <div className="grid max-w-[65rem] grid-cols-2 gap-4 lg:grid-cols-12 lg:grid-rows-12">
       <div className="relative col-span-2 flex max-w-full flex-col items-start rounded-3xl border border-slate-300 p-6 pt-8 text-start lg:col-span-8 lg:row-span-6">
@@ -27,19 +51,16 @@ function Grid({ name, job }) {
         </div>
         <h3 className="mb-4 text-4xl font-black">{name}</h3>
         <div className="mb-8 flex flex-col gap-2 sm:flex-row">
-          <Badge variant={"primarySkill"}>Web Development</Badge>
-          <Badge variant={"secondarySkill"}>Web Design</Badge>
-          <Badge variant={"tertiarySkill"}>Graphics Design</Badge>
+          <Badge variant={"primarySkill"}>{primarySkill}</Badge>
+          <Badge variant={"secondarySkill"}>{secondarySkill}</Badge>
+          <Badge variant={"tertiarySkill"}>{tertiarySkill}</Badge>
         </div>
-        <p className="text-2xl">
-          A front-end developer from India focused on building products that
-          people can use.
-        </p>
+        <p className="text-2xl">{intro}</p>
       </div>
       <div className="relative col-span-2 flex flex-col items-start justify-end gap-2 rounded-3xl border border-slate-300 p-6 sm:col-span-1 lg:col-span-4 lg:row-span-3">
         <Globe size={28} className="absolute right-4 top-4" />
         <p className="text-slate-500">Reach me out</p>
-        <p className="text-2xl font-medium">amittambulkar.com</p>
+        <p className="text-2xl font-medium">{portfolio}</p>
       </div>
       <div className="col-span-2 grid grid-cols-4 content-center justify-items-center gap-4 rounded-3xl border border-slate-300 p-4 sm:col-span-1 lg:col-span-4 lg:row-span-3">
         <svg className="h-10 w-10" viewBox="0 0 128 128">
