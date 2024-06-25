@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import { useState } from "react";
 import { Form } from "./Form";
 import { Form2 } from "./Form2";
+import { Form3 } from "./Form3";
 
 export default function App() {
   const [name, setName] = useState("Your Name");
@@ -17,17 +18,22 @@ export default function App() {
   const [primarySkill, setPrimarySkill] = useState("Web Development");
   const [secondarySkill, setSecondarySkill] = useState("Web Design");
   const [tertiarySkill, setTertiarySkill] = useState("Graphics Design");
-  const [secondStep, setSecondStep] = useState(true);
+  const [secondStep, setSecondStep] = useState(false);
+  const [thirdStep, setThirdStep] = useState(false);
 
   function handleSecondStep() {
     setSecondStep(true);
+  }
+
+  function handleThirdStep() {
+    setThirdStep(true);
   }
 
   return (
     <div className="bg-[#F7FFFA] font-JakartaRegular">
       <Navbar />
       <Hero />
-      <Inputs>
+      <Inputs secondStep={secondStep}>
         {!secondStep ? (
           <Form
             name={name}
@@ -46,8 +52,10 @@ export default function App() {
             onTertiarySkill={setTertiarySkill}
             onSecondStep={handleSecondStep}
           />
+        ) : !thirdStep ? (
+          <Form2 onThirdStep={handleThirdStep} />
         ) : (
-          <Form2 />
+          <Form3 />
         )}
       </Inputs>
       <BentoGrid
