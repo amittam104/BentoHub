@@ -2,6 +2,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Globe } from "@phosphor-icons/react";
+import { useEffect, useState } from "react";
 
 export default function BentoGrid({
   name,
@@ -11,6 +12,12 @@ export default function BentoGrid({
   primarySkill,
   secondarySkill,
   tertiarySkill,
+  avatar,
+  projectName,
+  projectLogo,
+  projectIntro,
+  selectProject1Image,
+  selectProject2Image,
 }) {
   return (
     <section className="mx-4 mb-8 flex w-auto flex-col items-center rounded-3xl bg-white px-6 py-8 text-center drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] md:px-12 md:py-12 lg:px-12 lg:py-12 xl:mx-auto xl:w-[75rem]">
@@ -22,6 +29,12 @@ export default function BentoGrid({
         primarySkill={primarySkill}
         secondarySkill={secondarySkill}
         tertiarySkill={tertiarySkill}
+        avatar={avatar}
+        projectName={projectName}
+        projectLogo={projectLogo}
+        projectIntro={projectIntro}
+        selectProject1Image={selectProject1Image}
+        selectProject2Image={selectProject2Image}
       />
     </section>
   );
@@ -35,9 +48,40 @@ function Grid({
   primarySkill,
   secondarySkill,
   tertiarySkill,
+  avatar,
+  projectName,
+  projectLogo,
+  projectIntro,
+  selectProject1Image,
+  selectProject2Image,
 }) {
+  const [projectImage, setProjectImage] = useState(null);
+  const [projectImage2, setProjectImage2] = useState(null);
+
+  useEffect(
+    function () {
+      const projectSnap = localStorage.getItem("projectScreenshot");
+
+      if (projectSnap) {
+        setProjectImage(projectSnap);
+      }
+    },
+    [selectProject1Image],
+  );
+
+  useEffect(
+    function () {
+      const projectSnap2 = localStorage.getItem("projectScreenshot2");
+
+      if (projectSnap2) {
+        setProjectImage2(projectSnap2);
+      }
+    },
+    [selectProject2Image],
+  );
+
   return (
-    <div className="grid max-w-[65rem] grid-cols-2 gap-4 lg:grid-cols-12 lg:grid-rows-12">
+    <div className="grid max-h-[35rem] max-w-[65rem] grid-cols-2 gap-4 lg:grid-cols-12 lg:grid-rows-12">
       <div className="relative col-span-2 flex max-w-full flex-col items-start rounded-3xl border border-slate-300 p-6 pt-8 text-start lg:col-span-8 lg:row-span-6">
         <div className="absolute right-4 top-4 flex items-center gap-3 rounded-md bg-green-100 px-3 py-1 text-sm">
           <img className="static h-6 w-6" src="/circle-svgrepo-com.svg" />
@@ -45,7 +89,13 @@ function Grid({
         </div>
         <div className="mt-6 pb-6 sm:mt-0">
           <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarImage
+              src={
+                avatar
+                  ? avatar
+                  : `https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg`
+              }
+            />
             <AvatarFallback>Avatar</AvatarFallback>
           </Avatar>
         </div>
@@ -151,25 +201,33 @@ function Grid({
       </div>
       <div className="col-span-2 flex flex-col items-start justify-center rounded-3xl border border-slate-300 p-6 text-start md:col-span-1 lg:col-span-3 lg:row-span-6">
         <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg border-slate-200 bg-white p-2 shadow">
-          <img src="/BentoHub.svg" alt="project logo" />
+          <img
+            src={
+              projectLogo
+                ? projectLogo
+                : `https://www.amittambulkar.com/logo.svg`
+            }
+            alt="project logo"
+          />
         </div>
-        <h4 className="mb-6 text-lg font-semibold">BentoHub</h4>
+        <h4 className="mb-6 text-lg font-semibold">{projectName}</h4>
         <p className="text-sm">
-          Build your own bento grid, copy the HTML or Markdown code and paste it
-          on to the top of your GitHub Profile readme.
+          {projectIntro
+            ? projectIntro
+            : `Add one line intro for your capstone project here. Showcase the features in few simple words.`}
         </p>
       </div>
       <div className="col-span-2 flex items-center justify-center rounded-3xl border border-slate-300 p-4 md:col-span-1 lg:col-span-4 lg:row-span-6">
         <img
-          className="h-60 w-auto"
-          src="/BentoHubSnap.png"
+          className="max-h-full w-auto rounded-lg border-[3px] border-slate-800 shadow-xl"
+          src={projectImage ? projectImage : `/BentoHubSnap.png`}
           alt="bento hub app screenshot"
         />
       </div>
       <div className="col-span-2 flex items-center justify-center overflow-hidden rounded-3xl border border-slate-300 p-6 md:col-span-1 lg:col-span-5 lg:row-span-6">
         <img
-          className="rounded-lg border-2 border-slate-800 shadow-xl"
-          src="/portfolio.png"
+          className="max-h-full w-auto rounded-lg border-[3px] border-slate-800 shadow-xl"
+          src={projectImage2 ? projectImage2 : `/portfolio.png`}
           alt="Portfolio screenshot"
         />
       </div>

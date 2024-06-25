@@ -20,17 +20,45 @@ export default function App() {
   const [tertiarySkill, setTertiarySkill] = useState("Graphics Design");
   const [secondStep, setSecondStep] = useState(false);
   const [thirdStep, setThirdStep] = useState(false);
+  const [avatar, setAvatar] = useState("");
+  const [projectName, setProjectName] = useState("My Project");
+  const [projectLogo, setProjectLogo] = useState("");
+  const [projectIntro, setProjectIntro] = useState("");
+  const [selectProject1Image, setSelectProject1Image] = useState(null);
+  const [selectProject2Image, setSelectProject2Image] = useState(null);
 
   function handleSecondStep() {
     setSecondStep(!secondStep);
   }
 
-  // function handleBackToFirstStep() {
-  //   setSecondStep(true);
-  // }
-
   function handleThirdStep() {
     setThirdStep(!thirdStep);
+  }
+
+  function handleImage1Upload(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = function () {
+      const base64string = reader.result;
+      localStorage.setItem("projectScreenshot", base64string);
+      setSelectProject1Image(base64string);
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  function handleImage2Upload(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = function () {
+      const base64string = reader.result;
+      localStorage.setItem("projectScreenshot2", base64string);
+      setSelectProject2Image(base64string);
+    };
+
+    reader.readAsDataURL(file);
   }
 
   return (
@@ -60,6 +88,16 @@ export default function App() {
           <Form2
             onThirdStep={handleThirdStep}
             onSecondStep={handleSecondStep}
+            avatar={avatar}
+            onAvatar={setAvatar}
+            projectName={projectName}
+            onProjectName={setProjectName}
+            projectLogo={projectLogo}
+            onProjectLogo={setProjectLogo}
+            projectIntro={projectIntro}
+            onProjectIntro={setProjectIntro}
+            onImage1Upload={handleImage1Upload}
+            onImage2Upload={handleImage2Upload}
           />
         ) : (
           <Form3 onThirdStep={handleThirdStep} />
@@ -73,6 +111,12 @@ export default function App() {
         primarySkill={primarySkill}
         secondarySkill={secondarySkill}
         tertiarySkill={tertiarySkill}
+        avatar={avatar}
+        projectName={projectName}
+        projectLogo={projectLogo}
+        projectIntro={projectIntro}
+        selectProject1Image={selectProject1Image}
+        selectProject2Image={selectProject2Image}
       />
       <CTA />
       <Footer />
