@@ -1,14 +1,25 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export function Form3({ onThirdStep }) {
-  const [lang1, setLang1] = useState("");
+  const [lang, setLang] = useState("");
+  const [elements, setElements] = useState([]);
+  const containerRef = useRef(null);
 
-  console.log(lang1);
-  console.log(typeof lang1);
+  function handleAddClick() {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(lang, "text/html");
+    const element = doc.body.firstChild;
+
+    if (element && elements.length < 8) {
+      setElements([...elements, element]);
+    }
+
+    setLang("");
+  }
 
   return (
     <div className="flex gap-8">
@@ -19,10 +30,13 @@ export function Form3({ onThirdStep }) {
             <Input
               id="name"
               placeholder="Paste the image element here"
-              value={lang1}
-              onChange={(e) => setLang1(e.target.value)}
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
             />
-            <Button className="lg:col-span-1 lg:col-end-12 lg:self-end">
+            <Button
+              className="lg:col-span-1 lg:col-end-12 lg:self-end"
+              onClick={handleAddClick}
+            >
               Add
             </Button>
           </div>
@@ -40,8 +54,19 @@ export function Form3({ onThirdStep }) {
           alt="svgicon.dev snap"
         />
       </div>
-      <div className="flex w-full flex-wrap rounded-3xl bg-white px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)]">
-        {lang1}
+      <div
+        ref={containerRef}
+        className="flex w-full flex-wrap rounded-3xl bg-white px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)]"
+      >
+        {elements.map((element, index) => (
+          <div key={index} className="h-16 w-16">
+            {element.outerHTML && (
+              <div
+                dangerouslySetInnerHTML={{ __html: element.outerHTML }}
+              ></div>
+            )}
+          </div>
+        ))}
       </div>
       <Button
         className="lg:col-span-1 lg:col-end-12 lg:self-end"
