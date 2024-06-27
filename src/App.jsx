@@ -5,7 +5,7 @@ import Inputs from "./Inputs";
 import BentoGrid from "./BentoGrid";
 import CTA from "./CTA";
 import Footer from "./Footer";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Form } from "./Form";
 import { Form2 } from "./Form2";
 import { Form3 } from "./Form3";
@@ -26,6 +26,21 @@ export default function App() {
   const [projectIntro, setProjectIntro] = useState("");
   const [selectProject1Image, setSelectProject1Image] = useState(null);
   const [selectProject2Image, setSelectProject2Image] = useState(null);
+  const [lang, setLang] = useState("");
+  const [elements, setElements] = useState([]);
+  const containerRef = useRef(null);
+
+  function handleAddClick() {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(lang, "text/html");
+    const element = doc.body.firstChild;
+
+    if (element && elements.length < 8) {
+      setElements([...elements, element]);
+    }
+
+    setLang("");
+  }
 
   function handleSecondStep() {
     setSecondStep(!secondStep);
@@ -100,7 +115,14 @@ export default function App() {
             onImage2Upload={handleImage2Upload}
           />
         ) : (
-          <Form3 onThirdStep={handleThirdStep} />
+          <Form3
+            onThirdStep={handleThirdStep}
+            lang={lang}
+            setLang={setLang}
+            elements={elements}
+            containerRef={containerRef}
+            onAddClick={handleAddClick}
+          />
         )}
       </Inputs>
       <BentoGrid
@@ -117,6 +139,8 @@ export default function App() {
         projectIntro={projectIntro}
         selectProject1Image={selectProject1Image}
         selectProject2Image={selectProject2Image}
+        elements={elements}
+        containerRef={containerRef}
       />
       <CTA />
       <Footer />

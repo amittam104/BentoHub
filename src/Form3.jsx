@@ -1,26 +1,16 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export function Form3({ onThirdStep }) {
-  const [lang, setLang] = useState("");
-  const [elements, setElements] = useState([]);
-  const containerRef = useRef(null);
-
-  function handleAddClick() {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(lang, "text/html");
-    const element = doc.body.firstChild;
-
-    if (element && elements.length < 8) {
-      setElements([...elements, element]);
-    }
-
-    setLang("");
-  }
-
+export function Form3({
+  onThirdStep,
+  lang,
+  setLang,
+  elements,
+  containerRef,
+  onAddClick,
+}) {
   return (
     <div className="flex gap-8">
       <div className="flex w-full flex-col gap-6">
@@ -35,7 +25,7 @@ export function Form3({ onThirdStep }) {
             />
             <Button
               className="lg:col-span-1 lg:col-end-12 lg:self-end"
-              onClick={handleAddClick}
+              onClick={onAddClick}
             >
               Add
             </Button>
@@ -56,7 +46,7 @@ export function Form3({ onThirdStep }) {
       </div>
       <div
         ref={containerRef}
-        className="flex w-full flex-wrap rounded-3xl bg-white px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)]"
+        className="flex w-full flex-wrap items-center justify-center gap-12 rounded-3xl bg-white px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)]"
       >
         {elements.map((element, index) => (
           <div key={index} className="h-16 w-16">
@@ -74,6 +64,9 @@ export function Form3({ onThirdStep }) {
         onClick={onThirdStep}
       >
         Back
+      </Button>
+      <Button className="lg:col-span-1 lg:col-end-13 lg:self-end">
+        Finish
       </Button>
     </div>
   );
