@@ -2,14 +2,18 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import DOMPurify from "dompurify";
 
 export function Form3({
   onThirdStep,
   lang,
   setLang,
   elements,
-  containerRef,
+  // containerRef,
   onAddClick,
+  // onCaptureScreenshot,
+  // gridContainerRef,
+  onHandleScrollToOutput,
 }) {
   return (
     <div className="flex gap-8">
@@ -45,14 +49,16 @@ export function Form3({
         />
       </div>
       <div
-        ref={containerRef}
+        // ref={containerRef}
         className="flex w-full flex-wrap items-center justify-center gap-12 rounded-3xl bg-white px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)]"
       >
         {elements.map((element, index) => (
           <div key={index} className="h-16 w-16">
             {element.outerHTML && (
               <div
-                dangerouslySetInnerHTML={{ __html: element.outerHTML }}
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(element.outerHTML),
+                }}
               ></div>
             )}
           </div>
@@ -65,7 +71,11 @@ export function Form3({
       >
         Back
       </Button>
-      <Button className="lg:col-span-1 lg:col-end-13 lg:self-end">
+      <Button
+        className="lg:col-span-1 lg:col-end-13 lg:self-end"
+        onClick={onHandleScrollToOutput}
+        // onClick={() => onCaptureScreenshot(gridContainerRef.current)}
+      >
         Finish
       </Button>
     </div>

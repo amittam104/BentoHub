@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Button } from "./components/ui/button";
 import { ArrowFatDown } from "@phosphor-icons/react";
 
-export default function Hero() {
+export default function Hero({ onScrollInputsView }) {
   // const ref = useRef(null);
   // const handleClick = () => {
   //   ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -16,7 +17,7 @@ export default function Hero() {
         Build your own bento grid, copy the HTML or Markdown code and paste it
         on to the top of your GitHub Profile readme
       </p>
-      <Button className="flex items-center gap-2">
+      <Button onClick={onScrollInputsView} className="flex items-center gap-2">
         Build Your Grid <ArrowFatDown size={24} />
       </Button>
     </section>

@@ -9,6 +9,7 @@ import { useRef, useState } from "react";
 import { Form } from "./Form";
 import { Form2 } from "./Form2";
 import { Form3 } from "./Form3";
+// import html2canvas from "html2canvas";
 
 export default function App() {
   const [name, setName] = useState("Your Name");
@@ -29,6 +30,26 @@ export default function App() {
   const [lang, setLang] = useState("");
   const [elements, setElements] = useState([]);
   const containerRef = useRef(null);
+  const inputsView = useRef(null);
+  const outputView = useRef(null);
+  // const gridContainerRef = useRef();
+
+  // function handleCaptureScreenshot(element) {
+  //   html2canvas(element).then((canvas) => {
+  //     const imgData = canvas.toDataURL("image/png");
+
+  //     const newWindow = window.open();
+  //     newWindow.document.write(`<img src="${imgData}" />`);
+  //   });
+  // }
+
+  function handleScrollToInputs() {
+    inputsView.current.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function handleScrollToOutput() {
+    outputView.current.scrollIntoView({ behavior: "smooth" });
+  }
 
   function handleAddClick() {
     const parser = new DOMParser();
@@ -79,8 +100,12 @@ export default function App() {
   return (
     <div className="bg-[#F7FFFA] font-JakartaRegular">
       <Navbar />
-      <Hero />
-      <Inputs secondStep={secondStep} thirdStep={thirdStep}>
+      <Hero onScrollInputsView={handleScrollToInputs} />
+      <Inputs
+        inputsView={inputsView}
+        secondStep={secondStep}
+        thirdStep={thirdStep}
+      >
         {!secondStep ? (
           <Form
             name={name}
@@ -122,6 +147,9 @@ export default function App() {
             elements={elements}
             containerRef={containerRef}
             onAddClick={handleAddClick}
+            onHandleScrollToOutput={handleScrollToOutput}
+            // onCaptureScreenshot={handleCaptureScreenshot}
+            // gridContainerRef={gridContainerRef}
           />
         )}
       </Inputs>
@@ -141,8 +169,9 @@ export default function App() {
         selectProject2Image={selectProject2Image}
         elements={elements}
         containerRef={containerRef}
+        // gridContainerRef={gridContainerRef}
       />
-      <CTA />
+      <CTA outputView={outputView} />
       <Footer />
     </div>
   );

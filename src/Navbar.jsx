@@ -38,13 +38,13 @@ export function CTAButtons() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Button
+        {/* <Button
           variant={"bentohub"}
           className="hidden items-center gap-2 lg:flex"
         >
           <HandHeart size={20} />
           Sponsor
-        </Button>
+        </Button> */}
       </a>
     </div>
   );
