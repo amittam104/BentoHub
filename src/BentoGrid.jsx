@@ -92,9 +92,9 @@ function Grid({
   return (
     <div
       ref={gridContainerRef}
-      className="grid max-h-[34rem] max-w-[65rem] grid-cols-2 gap-4 lg:grid-cols-12 lg:grid-rows-12"
+      className="grid max-h-[35rem] max-w-[65rem] grid-cols-2 gap-4 lg:grid-cols-12 lg:grid-rows-12"
     >
-      <div className="relative col-span-2 flex max-w-full flex-col items-start rounded-3xl border border-slate-300 p-6 pt-8 text-start lg:col-span-8 lg:row-span-6">
+      <div className="relative col-span-2 flex max-w-full flex-col items-start rounded-3xl border border-slate-300 p-6 pt-6 text-start lg:col-span-8 lg:row-span-6">
         <div className="absolute right-4 top-4 flex items-center gap-3 rounded-md bg-green-100 px-3 py-1 text-sm">
           <img className="static h-6 w-6" src="/circle-svgrepo-com.svg" />
           <p className="static font-medium text-green-900">{job}</p>
@@ -112,7 +112,7 @@ function Grid({
           </Avatar>
         </div>
         <h3 className="mb-4 text-4xl font-black">{name}</h3>
-        <div className="mb-8 flex flex-col gap-2 sm:flex-row">
+        <div className="mb-6 flex flex-col gap-2 sm:flex-row">
           <Badge variant={"primarySkill"}>{primarySkill}</Badge>
           <Badge variant={"secondarySkill"}>{secondarySkill}</Badge>
           <Badge variant={"tertiarySkill"}>{tertiarySkill}</Badge>
