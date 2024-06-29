@@ -5,9 +5,9 @@ export default function Footer() {
         href="https://x.com/attambulkar"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm italic"
+        className="text-sm italic hover:text-green-600 hover:underline"
       >
-        Build by Amit (@attambulkar)
+        Made by Amit Tambulkar
       </a>
     </footer>
   );
