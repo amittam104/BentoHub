@@ -9,6 +9,7 @@ import { useRef, useState } from "react";
 import { Form } from "./Form";
 import { Form2 } from "./Form2";
 import { Form3 } from "./Form3";
+import BannerNote from "./BannerNote";
 // import html2canvas from "html2canvas";
 
 export default function App() {
@@ -101,6 +102,7 @@ export default function App() {
     <div className="bg-[#F7FFFA] font-JakartaRegular">
       <Navbar />
       <Hero onScrollInputsView={handleScrollToInputs} />
+      <BannerNote />
       <Inputs
         inputsView={inputsView}
         secondStep={secondStep}

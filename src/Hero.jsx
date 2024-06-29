@@ -13,7 +13,7 @@ export default function Hero({ onScrollInputsView }) {
       <h1 className="mb-8 text-3xl font-black text-slate-900 md:text-4xl lg:text-5xl xl:w-[55rem] xl:text-6xl">
         Make your GitHub Profile modern and trendy
       </h1>
-      <p className="md:text-md font-regular mb-16 text-sm text-slate-800">
+      <p className="md:text-md font-regular mb-16 text-slate-800">
         Build your own bento grid, copy the HTML or Markdown code and paste it
         on to the top of your GitHub Profile readme
       </p>
