@@ -92,7 +92,7 @@ function Grid({
   return (
     <div
       ref={gridContainerRef}
-      className="grid max-h-[35rem] max-w-[65rem] grid-cols-2 gap-4 lg:grid-cols-12 lg:grid-rows-12"
+      className="grid max-w-[65rem] grid-cols-2 gap-4 lg:max-h-[35rem] lg:grid-cols-12 lg:grid-rows-12"
     >
       <div className="relative col-span-2 flex max-w-full flex-col items-start rounded-3xl border border-slate-300 p-6 pt-6 text-start lg:col-span-8 lg:row-span-6">
         <div className="absolute right-4 top-4 flex items-center gap-3 rounded-md bg-green-100 px-3 py-1 text-sm">
