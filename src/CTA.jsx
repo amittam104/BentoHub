@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { CTAButtons } from "./Navbar";
+import { Button } from "./components/ui/button";
+import { GithubLogo } from "@phosphor-icons/react";
 import { Output } from "./Output";
 
 export default function CTA({ outputView }) {
@@ -19,7 +20,16 @@ function CallToAction() {
         If you liked it then give a start on the github repository to support
         this project.
       </p>
-      <CTAButtons />
+      <a
+        href="https://github.com/amittam104/BentoHub"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button variant={"outline"} className="gap-2">
+          <GithubLogo size={20} />
+          GitHub Repo
+        </Button>
+      </a>
     </div>
   );
 }
