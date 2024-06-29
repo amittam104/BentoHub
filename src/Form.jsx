@@ -32,6 +32,7 @@ export function Form({
               placeholder="Enter Your Name"
               value={name}
               onChange={(e) => onSetName(e.target.value)}
+              maxlength="30"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your first or full name
@@ -44,6 +45,7 @@ export function Form({
               placeholder="What do you do?"
               value={job}
               onChange={(e) => onSetJob(e.target.value)}
+              maxlength="45"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your job or role
@@ -56,6 +58,7 @@ export function Form({
               placeholder="Your portfolio site or personal site"
               value={portfolio}
               onChange={(e) => onSetPortfolio(e.target.value)}
+              maxlength="45"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter personal / agency / company url
@@ -70,6 +73,7 @@ export function Form({
               placeholder="Enter your one sentence intro"
               value={intro}
               onChange={(e) => onSetIntro(e.target.value)}
+              maxlength="108"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your oneline intro
@@ -82,6 +86,7 @@ export function Form({
               placeholder="Fronted Development"
               value={primarySkill}
               onChange={(e) => onPrimarySkill(e.target.value)}
+              maxlength="30"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your primary skill
@@ -94,6 +99,7 @@ export function Form({
               placeholder="Web Design"
               value={secondarySkill}
               onChange={(e) => onSecondarySkill(e.target.value)}
+              maxlength="30"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your secondary skill
@@ -106,6 +112,7 @@ export function Form({
               placeholder="Graphics Design"
               value={tertiarySkill}
               onChange={(e) => onTertiarySkill(e.target.value)}
+              maxlength="30"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your tertiary skill

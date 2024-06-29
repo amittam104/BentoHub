@@ -41,9 +41,10 @@ export function Form2({
             placeholder="Enter capstone project name"
             value={projectName}
             onChange={(e) => onProjectName(e.target.value)}
+            maxlength="25"
           />
           <p className="text-sm text-rose-600 opacity-0">
-            Please enter your first or full name
+            Please enter your project name
           </p>
         </div>
         <div className="flex w-[90%] flex-col space-y-2">
@@ -67,6 +68,7 @@ export function Form2({
             placeholder="Enter your one sentence project intro"
             value={projectIntro}
             onChange={(e) => onProjectIntro(e.target.value)}
+            maxlength="105"
           />
           <p className="text-sm text-rose-600 opacity-0">
             Please enter your capstone project intro
