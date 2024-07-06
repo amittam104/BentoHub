@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mb-4 w-full text-center">
+    <footer className="w-full text-center">
       <a
         href="https://x.com/attambulkar"
         target="_blank"

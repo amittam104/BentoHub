@@ -2,7 +2,7 @@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Upload } from "@phosphor-icons/react";
+// import { Upload } from "@phosphor-icons/react";
 import { Textarea } from "@/components/ui/textarea";
 
 export function Form2({
@@ -80,13 +80,13 @@ export function Form2({
             <Input
               id="avatar"
               type="file"
-              className="w-full pr-12"
+              className="w-full pr-12 dark:text-slate-300"
               placeholder="Upload image of your project"
               onChange={onImage1Upload}
             />
-            <Button variant="ghost" type="button" className="absolute right-2">
+            {/* <Button variant="ghost" type="button" className="absolute right-2">
               <Upload size={20} />
-            </Button>
+            </Button> */}
           </div>
         </div>
         <div className="flex w-[90%] flex-col gap-2">
@@ -95,13 +95,13 @@ export function Form2({
             <Input
               id="avatar"
               type="file"
-              className="w-full pr-12"
+              className="w-full pr-12 dark:text-slate-300"
               placeholder="Upload image of your project"
               onChange={onImage2Upload}
             />
-            <Button variant="ghost" type="button" className="absolute right-2">
+            {/* <Button variant="ghost" type="button" className="absolute right-2">
               <Upload size={20} />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ export function Form2({
         Back
       </Button>
       <Button
-        className="lg:col-span-1 lg:col-end-13 lg:self-end"
+        className="lg:col-span-1 lg:col-end-13 lg:self-end dark:border-[1px] dark:border-[#30363db3] dark:bg-[#1c242d] dark:text-slate-50 dark:hover:bg-gray-950/30"
         onClick={onThirdStep}
       >
         Next

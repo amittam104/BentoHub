@@ -1,9 +1,30 @@
 import { Button } from "./components/ui/button";
-import { GithubLogo } from "@phosphor-icons/react";
+import { GithubLogo, SunDim, MoonStars } from "@phosphor-icons/react";
+import { Toggle } from "@/components/ui/toggle";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [theme, setTheme] = useState("light");
+
+  function handleThemeLight() {
+    setTheme("light");
+  }
+
+  function handleThemeDark() {
+    setTheme("dark");
+  }
+
+  useEffect(
+    function () {
+      if (theme === "dark") document.documentElement.classList.add("dark");
+
+      if (theme === "light") document.documentElement.classList.remove("dark");
+    },
+    [theme],
+  );
+
   return (
-    <nav className="mx-4 my-4 mb-8 mt-4 flex w-auto items-center justify-between rounded-xl bg-white p-4 drop-shadow-[6px_6px_8px_rgba(0,0,0,0.06)] xl:mx-auto xl:w-[78rem] 2xl:w-[90rem]">
+    <nav className="mx-4 mb-8 flex w-auto items-center justify-between rounded-xl bg-white p-4 drop-shadow-[6px_6px_8px_rgba(0,0,0,0.06)] xl:mx-auto xl:w-[78rem] 2xl:w-[90rem] dark:border-[1px] dark:border-[#30363db3] dark:bg-[#161b22]">
       <div className="flex items-center gap-4">
         <img
           className="h-8 w-8 lg:h-12 lg:w-12"
@@ -12,14 +33,28 @@ export default function Navbar() {
         />
         <p className="text-lg font-black md:text-xl lg:text-2xl">BentoHub</p>
       </div>
-      <CTAButtons />
+      <CTAButtons
+        theme={theme}
+        onThemeToggleLight={handleThemeLight}
+        onThemeToggleDark={handleThemeDark}
+      />
     </nav>
   );
 }
 
-export function CTAButtons() {
+// eslint-disable-next-line react/prop-types
+export function CTAButtons({ theme, onThemeToggleLight, onThemeToggleDark }) {
   return (
     <div className="flex items-center gap-8">
+      {theme === "light" ? (
+        <Toggle onClick={onThemeToggleDark}>
+          <SunDim size={20} />
+        </Toggle>
+      ) : (
+        <Toggle onClick={onThemeToggleLight}>
+          <MoonStars size={20} />
+        </Toggle>
+      )}
       <a
         href="https://github.com/amittam104/BentoHub"
         target="_blank"

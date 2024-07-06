@@ -28,7 +28,7 @@ export function Form3({
               onChange={(e) => setLang(e.target.value)}
             />
             <Button
-              className="lg:col-span-1 lg:col-end-12 lg:self-end"
+              className="lg:col-span-1 lg:col-end-12 lg:self-end dark:border-[1px] dark:border-[#30363db3] dark:bg-[#1c242d] dark:text-slate-50 dark:hover:bg-gray-950/30"
               onClick={onAddClick}
             >
               Add
@@ -50,7 +50,7 @@ export function Form3({
       </div>
       <div
         // ref={containerRef}
-        className="flex w-full flex-wrap items-center justify-center gap-12 rounded-3xl bg-white px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)]"
+        className="flex w-full flex-wrap items-center justify-center gap-12 rounded-3xl bg-white px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] dark:bg-slate-950"
       >
         {elements.map((element, index) => (
           <div key={index} className="h-16 w-16">
@@ -72,7 +72,7 @@ export function Form3({
         Back
       </Button>
       <Button
-        className="lg:col-span-1 lg:col-end-13 lg:self-end"
+        className="lg:col-span-1 lg:col-end-13 lg:self-end dark:border-[1px] dark:border-[#30363db3] dark:bg-[#1c242d] dark:text-slate-50 dark:hover:bg-gray-950/30"
         onClick={onHandleScrollToOutput}
         // onClick={() => onCaptureScreenshot(gridContainerRef.current)}
       >

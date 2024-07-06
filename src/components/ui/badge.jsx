@@ -15,10 +15,12 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
         outline: "text-foreground",
-        primarySkill: "border-transparent bg-blue-200 shadow  text-blue-800",
+        primarySkill:
+          "border-transparent bg-blue-200 shadow text-blue-800 dark:bg-blue-800 dark:text-blue-50",
         secondarySkill:
-          "border-transparent bg-fuchsia-200 shadow  text-fuchsia-800",
-        tertiarySkill: "border-transparent bg-rose-200 shadow  text-rose-800",
+          "border-transparent bg-fuchsia-200 shadow  text-fuchsia-800 dark:bg-fuchsia-800 dark:text-fuchsia-50",
+        tertiarySkill:
+          "border-transparent bg-rose-200 shadow  text-rose-800 dark:bg-rose-800 dark:text-rose-50",
       },
     },
     defaultVariants: {

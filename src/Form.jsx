@@ -119,7 +119,10 @@ export function Form({
             </p>
           </div>
         </div>
-        <Button className="self-end" onClick={onSecondStep}>
+        <Button
+          className="self-end dark:border-[1px] dark:border-[#30363db3] dark:bg-[#1c242d] dark:text-slate-50 dark:hover:bg-gray-950/30"
+          onClick={onSecondStep}
+        >
           Next
         </Button>
       </div>

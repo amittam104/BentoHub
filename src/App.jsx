@@ -99,7 +99,7 @@ export default function App() {
   }
 
   return (
-    <div className="bg-[#F7FFFA] font-JakartaRegular">
+    <div className="bg-[#F7FFFA] py-4 font-JakartaRegular dark:bg-gray-950">
       <Navbar />
       <Hero onScrollInputsView={handleScrollToInputs} />
       <BannerNote />

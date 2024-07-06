@@ -17,9 +17,9 @@ export default function Inputs({
   return (
     <section
       ref={inputsView}
-      className="mx-4 mb-8 w-auto rounded-3xl bg-white px-3 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] sm:px-8 md:p-12 lg:p-4 xl:mx-auto xl:w-[75rem]"
+      className="mx-4 mb-8 w-auto rounded-3xl bg-white px-3 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] sm:px-8 md:p-12 lg:p-4 xl:mx-auto xl:w-[75rem] dark:border-[1px] dark:border-[#30363db3] dark:bg-[#161b22]"
     >
-      <Card className="border-none shadow-none">
+      <Card className="border-none shadow-none dark:bg-[#161b22]">
         <CardHeader>
           <CardTitle className="text-xl font-semibold">
             Enter your details

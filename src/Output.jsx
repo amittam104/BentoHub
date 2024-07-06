@@ -40,7 +40,7 @@ export function Output({ outputView }) {
   return (
     <div
       ref={outputView}
-      className="flex w-full flex-col items-start gap-12 rounded-3xl bg-white px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] md:px-6 md:py-6 lg:px-10 lg:py-10"
+      className="flex w-full flex-col items-start gap-12 rounded-3xl bg-white px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] md:px-6 md:py-6 lg:px-10 lg:py-10 dark:border-[1px] dark:border-[#30363db3] dark:bg-[#161b22]"
     >
       {!isUploaded ? (
         <UploadGriScreenshot
@@ -73,7 +73,11 @@ function UploadGriScreenshot({ onImageUpload, uploadImageEL }) {
             placeholder="Upload image of your project"
             ref={uploadImageEL}
           />
-          <Button onClick={onImageUpload} type="button">
+          <Button
+            onClick={onImageUpload}
+            className="dark:border-[1px] dark:border-[#30363db3] dark:bg-[#1c242d] dark:text-slate-50 dark:hover:bg-gray-950/30"
+            type="button"
+          >
             Upload
           </Button>
         </div>
