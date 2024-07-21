@@ -1,11 +1,10 @@
+/* eslint-disable react/prop-types */
 import { Button } from "./components/ui/button";
 import { GithubLogo, SunDim, MoonStars } from "@phosphor-icons/react";
 import { Toggle } from "@/components/ui/toggle";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export default function Navbar() {
-  const [theme, setTheme] = useState("light");
-
+export default function Navbar({ theme, setTheme }) {
   function handleThemeLight() {
     setTheme("light");
   }

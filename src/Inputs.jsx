@@ -28,8 +28,7 @@ export default function Inputs({
             {!secondStep &&
               !thirdStep &&
               `Fill out the details, checkout the grid below.`}
-            {secondStep &&
-              `Some more details. These images and info will showcase your projects and languages.`}
+            {secondStep && `Some more details.`}
           </CardDescription>
         </CardHeader>
         <CardContent className="p-3 sm:p-6">{children}</CardContent>

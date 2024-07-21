@@ -3,10 +3,10 @@ import { Button } from "./components/ui/button";
 import { GithubLogo } from "@phosphor-icons/react";
 import { Output } from "./Output";
 
-export default function CTA({ outputView }) {
+export default function CTA({ outputView, imageURL }) {
   return (
     <section className="items-strech mx-4 mb-20 flex w-auto flex-col justify-between gap-8 xl:mx-auto xl:w-[75rem] xl:flex-row">
-      <Output outputView={outputView} />
+      <Output outputView={outputView} imageURL={imageURL} />
       <CallToAction />
     </section>
   );

@@ -20,6 +20,8 @@ export function Form({
   onSecondarySkill,
   onTertiarySkill,
   onSecondStep,
+  xUsername,
+  onXUsername,
 }) {
   return (
     <form>
@@ -32,7 +34,7 @@ export function Form({
               placeholder="Enter Your Name"
               value={name}
               onChange={(e) => onSetName(e.target.value)}
-              maxlength="30"
+              maxlength="23"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your first or full name
@@ -45,7 +47,7 @@ export function Form({
               placeholder="What do you do?"
               value={job}
               onChange={(e) => onSetJob(e.target.value)}
-              maxlength="45"
+              maxlength="19"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your job or role
@@ -58,7 +60,7 @@ export function Form({
               placeholder="Your portfolio site or personal site"
               value={portfolio}
               onChange={(e) => onSetPortfolio(e.target.value)}
-              maxlength="45"
+              maxlength="17"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter personal / agency / company url
@@ -73,7 +75,7 @@ export function Form({
               placeholder="Enter your one sentence intro"
               value={intro}
               onChange={(e) => onSetIntro(e.target.value)}
-              maxlength="108"
+              maxlength="83"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your oneline intro
@@ -86,7 +88,7 @@ export function Form({
               placeholder="Fronted Development"
               value={primarySkill}
               onChange={(e) => onPrimarySkill(e.target.value)}
-              maxlength="30"
+              maxlength="19"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your primary skill
@@ -99,7 +101,7 @@ export function Form({
               placeholder="Web Design"
               value={secondarySkill}
               onChange={(e) => onSecondarySkill(e.target.value)}
-              maxlength="30"
+              maxlength="19"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your secondary skill
@@ -112,7 +114,20 @@ export function Form({
               placeholder="Graphics Design"
               value={tertiarySkill}
               onChange={(e) => onTertiarySkill(e.target.value)}
-              maxlength="30"
+              maxlength="19"
+            />
+            <p className="text-sm text-rose-600 opacity-0">
+              Please enter your tertiary skill
+            </p>
+          </div>
+          <div className="flex flex-col space-y-1.5">
+            <Label htmlFor="name">X / Twitter Username</Label>
+            <Input
+              id="name"
+              placeholder="Graphics Design"
+              value={xUsername}
+              onChange={(e) => onXUsername(e.target.value)}
+              maxlength="19"
             />
             <p className="text-sm text-rose-600 opacity-0">
               Please enter your tertiary skill

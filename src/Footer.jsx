@@ -7,7 +7,7 @@ export default function Footer() {
         rel="noopener noreferrer"
         className="text-sm italic hover:text-green-600 hover:underline"
       >
-        Made by Amit Tambulkar
+        Made by Amit (attambulkar)
       </a>
     </footer>
   );
