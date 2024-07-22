@@ -2,7 +2,7 @@
 import { Button } from "./components/ui/button";
 import { ArrowFatDown } from "@phosphor-icons/react";
 
-export default function Hero({ onScrollInputsView }) {
+export default function Hero({ onScrollInputsView, theme }) {
   // const ref = useRef(null);
   // const handleClick = () => {
   //   ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -17,12 +17,45 @@ export default function Hero({ onScrollInputsView }) {
         Build your own bento grid, copy the HTML or Markdown code and paste it
         on to the top of your GitHub Profile readme
       </p>
-      <Button
-        onClick={onScrollInputsView}
-        className="flex items-center gap-2 dark:border-slate-500 dark:bg-green-700 dark:text-slate-100 dark:shadow-none dark:hover:bg-green-700/90"
-      >
-        Build Your Grid <ArrowFatDown size={24} />
-      </Button>
+
+      <div className="flex items-center gap-8">
+        <Button
+          onClick={onScrollInputsView}
+          className="flex items-center gap-2 dark:border-slate-500 dark:bg-green-700 dark:text-slate-100 dark:shadow-none dark:hover:bg-green-700/90"
+        >
+          Build Your Grid <ArrowFatDown size={24} />
+        </Button>
+        {theme === "light" && (
+          <a
+            href="https://www.producthunt.com/products/bentohub/reviews?utm_source=badge-product_review&utm_medium=badge&utm_souce=badge-bentohub"
+            target="_blank"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=594555&theme=light"
+              alt="BentoHub - Make&#0032;your&#0032;GitHub&#0032;Profile&#0032;cool&#0044;&#0032;not&#0032;boring | Product Hunt"
+              // style="width: 250px; height: 54px;"
+              width="250"
+              height="54"
+              className="w-52"
+            />
+          </a>
+        )}
+        {theme === "dark" && (
+          <a
+            href="https://www.producthunt.com/products/bentohub/reviews?utm_source=badge-product_review&utm_medium=badge&utm_souce=badge-bentohub"
+            target="_blank"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=594555&theme=dark"
+              alt="BentoHub - Make&#0032;your&#0032;GitHub&#0032;Profile&#0032;cool&#0044;&#0032;not&#0032;boring | Product Hunt"
+              // style="width: 250px; height: 54px;"
+              width="250"
+              height="54"
+              className="w-52"
+            />
+          </a>
+        )}
+      </div>
     </section>
   );
 }

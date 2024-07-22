@@ -134,7 +134,7 @@ export default function App() {
   return (
     <div className="bg-[#F7FFFA] py-4 font-JakartaRegular dark:bg-gray-950">
       <Navbar theme={theme} setTheme={setTheme} />
-      <Hero onScrollInputsView={handleScrollToInputs} />
+      <Hero onScrollInputsView={handleScrollToInputs} theme={theme} />
       <BannerNote />
       <Inputs
         inputsView={inputsView}
