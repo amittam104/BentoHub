@@ -1,6 +1,4 @@
-
- 
-![Logo](https://bentohub.netlify.app/BentoHub.svg) 
+<img src="[drawing.jpg](https://bentohub.netlify.app/BentoHub.svg)" alt="bentohub logo" width="50"/>
 # BentoHub
 
 BentoHub is an app where you can create a bento grid and copy-paste the html or markdown code on to your github profile readme.
