@@ -44,11 +44,13 @@ Start the server
 **Client:** React, Shadcn, TailwindCSS
 
 **Server:** Appwrite
+
 <br>
 
 ## Screenshots
 
 ![App Screenshot](https://pbs.twimg.com/media/GTBeLrdWsAA61O_?format=jpg&name=medium)
+
 <br>
 
 ### Hi, I'm Amit! 👋
@@ -56,6 +58,7 @@ Start the server
 
 
 I'm a frontend developer focused on building apps that people can use.
+
 <br>
 
 ## 🔗 Reach out
