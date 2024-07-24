@@ -21,7 +21,7 @@ export default function Hero({ onScrollInputsView, theme }) {
       <div className="flex items-center gap-8">
         <Button
           onClick={onScrollInputsView}
-          className="flex items-center gap-2 dark:border-slate-500 dark:bg-green-700 dark:text-slate-100 dark:shadow-none dark:hover:bg-green-700/90"
+          className="flex items-center gap-2 dark:bg-slate-800 dark:text-slate-50 dark:shadow-none dark:hover:bg-slate-700/90"
         >
           Build Your Grid <ArrowFatDown size={24} />
         </Button>

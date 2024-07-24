@@ -1,6 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Button } from "./components/ui/button";
-import { GithubLogo, SunDim, MoonStars } from "@phosphor-icons/react";
+import {
+  GithubLogo,
+  SunDim,
+  MoonStars,
+  HandHeart,
+} from "@phosphor-icons/react";
 import { Toggle } from "@/components/ui/toggle";
 import { useEffect } from "react";
 
@@ -64,7 +69,7 @@ export function CTAButtons({ theme, onThemeToggleLight, onThemeToggleDark }) {
           GitHub Repo
         </Button>
       </a>
-      {/* <a
+      <a
         href="https://buymeacoffee.com/attam104"
         target="_blank"
         rel="noopener noreferrer"
@@ -76,7 +81,7 @@ export function CTAButtons({ theme, onThemeToggleLight, onThemeToggleDark }) {
           <HandHeart size={20} />
           Sponsor
         </Button>
-      </a> */}
+      </a>
     </div>
   );
 }
