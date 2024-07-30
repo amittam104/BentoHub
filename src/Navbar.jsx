@@ -7,25 +7,11 @@ import {
   HandHeart,
 } from "@phosphor-icons/react";
 import { Toggle } from "@/components/ui/toggle";
-import { useEffect } from "react";
 
-export default function Navbar({ theme, setTheme }) {
-  function handleThemeLight() {
-    setTheme("light");
+export default function Navbar({ theme, toggleTheme }) {
+  function handleThemeToggle() {
+    toggleTheme();
   }
-
-  function handleThemeDark() {
-    setTheme("dark");
-  }
-
-  useEffect(
-    function () {
-      if (theme === "dark") document.documentElement.classList.add("dark");
-
-      if (theme === "light") document.documentElement.classList.remove("dark");
-    },
-    [theme],
-  );
 
   return (
     <nav className="mx-4 mb-8 flex w-auto items-center justify-between rounded-xl bg-white p-4 drop-shadow-[6px_6px_8px_rgba(0,0,0,0.06)] xl:mx-auto xl:w-[78rem] 2xl:w-[90rem] dark:border-[1px] dark:border-[#30363db3] dark:bg-[#161b22]">
@@ -39,23 +25,22 @@ export default function Navbar({ theme, setTheme }) {
       </div>
       <CTAButtons
         theme={theme}
-        onThemeToggleLight={handleThemeLight}
-        onThemeToggleDark={handleThemeDark}
+        onThemeToggle={handleThemeToggle}
       />
     </nav>
   );
 }
 
 // eslint-disable-next-line react/prop-types
-export function CTAButtons({ theme, onThemeToggleLight, onThemeToggleDark }) {
+export function CTAButtons({ theme, onThemeToggle}) {
   return (
     <div className="flex items-center gap-8">
       {theme === "light" ? (
-        <Toggle onClick={onThemeToggleDark}>
+        <Toggle onClick={onThemeToggle}>
           <SunDim size={20} />
         </Toggle>
       ) : (
-        <Toggle onClick={onThemeToggleLight}>
+        <Toggle onClick={onThemeToggle}>
           <MoonStars size={20} />
         </Toggle>
       )}

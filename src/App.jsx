@@ -11,6 +11,7 @@ import { Form2 } from "./Form2";
 // import { Form3 } from "./Form3";
 import BannerNote from "./BannerNote";
 // import html2canvas from "html2canvas";
+import {useTheme} from "react-customs";
 
 export default function App() {
   const [name, setName] = useState("Your Name");
@@ -38,7 +39,7 @@ export default function App() {
   const outputView = useRef(null);
   const canvasRef = useRef(null);
   const [imageURL, setImageURL] = useState("");
-  const [theme, setTheme] = useState("light");
+  const {theme, toggleTheme} = useTheme();
   // const gridContainerRef = useRef();
 
   // function handleCaptureScreenshot(element) {
@@ -133,7 +134,7 @@ export default function App() {
 
   return (
     <div className="bg-[#F7FFFA] py-4 font-JakartaRegular dark:bg-gray-950">
-      <Navbar theme={theme} setTheme={setTheme} />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero onScrollInputsView={handleScrollToInputs} theme={theme} />
       <BannerNote />
       <Inputs
