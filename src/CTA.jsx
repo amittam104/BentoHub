@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
+import { Lego } from "@phosphor-icons/react";
 import { Button } from "./components/ui/button";
-import { GithubLogo, HandHeart } from "@phosphor-icons/react";
 import { Output } from "./Output";
 
 export default function CTA({ outputView, imageURL }) {
@@ -14,8 +14,27 @@ export default function CTA({ outputView, imageURL }) {
 
 function CallToAction() {
   return (
-    <div className="flex h-auto w-full flex-col items-start rounded-3xl border-2 border-green-200 bg-green-100 px-6 py-8 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] md:px-6 md:py-6 lg:px-10 lg:py-10 dark:border-none dark:bg-green-900/80 dark:text-slate-100 dark:shadow-none">
-      <h5 className="mb-6 text-base font-bold">Support BentoHub</h5>
+    <div className="flex h-auto w-full flex-col items-start rounded-3xl border-2 border-green-200 bg-green-100 px-6 py-6 drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] md:px-6 md:py-6 lg:px-8 lg:py-8 dark:border-none dark:bg-green-900/80 dark:text-slate-100 dark:shadow-none">
+      <h5 className="mb-6 text-lg font-bold">Gamify Build in Public</h5>
+      <p className="mb-12">
+        Write posts, use AI to refine them. Post daily to continue streak,
+        continue streak to earn reach levels, reach levels to earn points,
+        redeem points to get free AI tokens.
+      </p>
+      <a
+        href="https://buildnplay.site"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          variant={"bentohub"}
+          className="gap-2 dark:border-[#30363db3] dark:bg-[#161b22] dark:hover:bg-gray-950/30"
+        >
+          <Lego size={24} />
+          Start Building
+        </Button>
+      </a>
+      {/* <h5 className="mb-6 text-base font-bold">Support BentoHub</h5>
       <p className="mb-12">
         If you like BentoHub then give a star on the github repo or if you can
         then sponsor the project to show your support. Thank you!
@@ -47,7 +66,7 @@ function CallToAction() {
             Sponsor
           </Button>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }
