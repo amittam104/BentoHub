@@ -10,6 +10,36 @@ export default function Hero({ onScrollInputsView, theme }) {
 
   return (
     <section className="mx-4 mb-8 flex w-auto flex-col items-center rounded-3xl bg-white px-6 py-8 text-center drop-shadow-[3px_3px_18px_rgba(0,0,0,0.06)] md:px-12 md:py-12 lg:px-24 lg:py-16 xl:mx-auto xl:w-[75rem] dark:border-[1px] dark:bg-[#161b22]">
+      {theme === "light" && (
+        <a
+          href="https://www.producthunt.com/posts/bentohub?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-bentohub"
+          target="_blank"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=472809&theme=light&period=daily"
+            alt="BentoHub - Make&#0032;your&#0032;GitHub&#0032;profile&#0032;cool | Product Hunt"
+            // style="width: 250px; height: 54px;"
+            className="mb-6 h-14 w-60"
+            width="250"
+            height="54"
+          />
+        </a>
+      )}
+      {theme === "dark" && (
+        <a
+          href="https://www.producthunt.com/posts/bentohub?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-bentohub"
+          target="_blank"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=472809&theme=dark&period=daily"
+            alt="BentoHub - Make&#0032;your&#0032;GitHub&#0032;profile&#0032;cool | Product Hunt"
+            className="mb-6 h-14 w-60"
+            width="250"
+            height="54"
+          />
+        </a>
+      )}
+
       <h1 className="mb-8 text-3xl font-black text-slate-900 md:text-4xl lg:text-5xl xl:w-[55rem] xl:text-6xl dark:text-slate-50">
         Make your GitHub Profile modern and trendy
       </h1>
@@ -25,7 +55,7 @@ export default function Hero({ onScrollInputsView, theme }) {
         >
           Build Your Grid <ArrowFatDown size={24} />
         </Button>
-        {theme === "light" && (
+        {/* {theme === "light" && (
           <a
             href="https://www.producthunt.com/products/bentohub/reviews?utm_source=badge-product_review&utm_medium=badge&utm_souce=badge-bentohub"
             target="_blank"
@@ -54,7 +84,7 @@ export default function Hero({ onScrollInputsView, theme }) {
               className="w-52"
             />
           </a>
-        )}
+        )} */}
       </div>
     </section>
   );
