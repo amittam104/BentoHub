@@ -11,9 +11,10 @@ import { Form2 } from "./Form2";
 // import { Form3 } from "./Form3";
 import BannerNote from "./BannerNote";
 // import html2canvas from "html2canvas";
-import {useTheme} from "react-customs";
+import { useTheme } from "./lib/useTheme";
 
 export default function App() {
+  const { theme, toggleTheme } = useTheme();
   const [name, setName] = useState("Your Name");
   const [job, setJob] = useState("Frontend Developer");
   const [portfolio, setPortfolio] = useState("portfolio.com");
@@ -32,14 +33,11 @@ export default function App() {
   const [selectProject2Image, setSelectProject2Image] = useState(null);
   const [selectProjectLogo, setSelectProjectLogo] = useState(null);
   const [selectAvatar, setSelectAvatar] = useState(null);
-  const [lang, setLang] = useState("");
-  const [elements, setElements] = useState([]);
+  const [imageURL, setImageURL] = useState("");
   const containerRef = useRef(null);
   const inputsView = useRef(null);
   const outputView = useRef(null);
   const canvasRef = useRef(null);
-  const [imageURL, setImageURL] = useState("");
-  const {theme, toggleTheme} = useTheme();
   // const gridContainerRef = useRef();
 
   // function handleCaptureScreenshot(element) {
@@ -209,7 +207,6 @@ export default function App() {
         projectIntro={projectIntro}
         selectProject1Image={selectProject1Image}
         selectProject2Image={selectProject2Image}
-        elements={elements}
         containerRef={containerRef}
         canvasRef={canvasRef}
         setImageURL={setImageURL}
